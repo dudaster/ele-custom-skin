@@ -18,7 +18,6 @@ class Custom_Types_Manager extends Templates_Types_Manager {
 		];
 
 		foreach ( $this->docs_types as $type => $class_name ) {
-      //echo $class_name;
 			Plugin::elementor()->documents->register_document_type( $type, $class_name );
 			Source_Local::add_template_type( $type );
 		}
@@ -26,7 +25,3 @@ class Custom_Types_Manager extends Templates_Types_Manager {
 }
 
 new Custom_Types_Manager();
-/*
-
-			Plugin::elementor()->documents->register_document_type( 'loop', Documents\Loop::get_class_full_name() );
-			Source_Local::add_template_type( 'loop' );
