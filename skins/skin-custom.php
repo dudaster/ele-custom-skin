@@ -28,8 +28,8 @@ class Skin_Custom extends Skin_Base {
 	}
 
 	protected function _register_controls_actions() {
-		add_action( 'elementor/element/posts-archive/section_layout/before_section_end', [ $this, 'register_controls' ] );
-		add_action( 'elementor/element/posts-archive/section_query/after_section_end', [ $this, 'register_style_sections' ] );
+		add_action( 'elementor/element/archive-posts/section_layout/before_section_end', [ $this, 'register_controls' ] );
+		add_action( 'elementor/element/archive-posts/section_query/after_section_end', [ $this, 'register_style_sections' ] );
 		
 		add_action( 'elementor/element/posts/section_layout/before_section_end', [ $this, 'register_controls' ] );
 		add_action( 'elementor/element/posts/section_query/after_section_end', [ $this, 'register_style_sections' ] );
@@ -152,7 +152,7 @@ class Skin_Custom extends Skin_Base {
 }
 
 // Add a custom skin for the POST Archive widget
-add_action( 'elementor/widget/posts-archive/skins_init', function( $widget ) {
+add_action( 'elementor/widget/archive-posts/skins_init', function( $widget ) {
    $widget->add_skin( new Skin_Custom( $widget ) );
 } );
 // Add a custom skin for the POSTS widget
