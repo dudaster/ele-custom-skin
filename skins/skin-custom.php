@@ -69,11 +69,13 @@ class Skin_Custom extends Skin_Base {
 	private function get_skin_template(){
 				global $wpdb;
 				$templates = $wpdb->get_results( 
-					"SELECT $wpdb->term_relationships.object_id as ID, $wpdb->posts.post_title as post_title FROM $wpdb->term_relationships 
-					INNER JOIN $wpdb->terms ON 
-						$wpdb->term_relationships.term_taxonomy_id=$wpdb->terms.term_id AND $wpdb->terms.slug='loop'
-					INNER JOIN $wpdb->posts ON
-						$wpdb->term_relationships.object_id=$wpdb->posts.ID"
+					"SELECT $wpdb->term_relationships.object_id as ID, $wpdb->posts.post_title as post_title FROM $wpdb->term_relationships
+						INNER JOIN $wpdb->term_taxonomy ON
+							$wpdb->term_relationships.term_taxonomy_id=$wpdb->term_taxonomy.term_taxonomy_id
+						INNER JOIN $wpdb->terms ON 
+							$wpdb->term_taxonomy.term_id=$wpdb->terms.term_id AND $wpdb->terms.slug='loop'
+						INNER JOIN $wpdb->posts ON
+							$wpdb->term_relationships.object_id=$wpdb->posts.ID"
 				);
 				$options = [ '' => '' ];
 				foreach ( $templates as $template ) {
