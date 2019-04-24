@@ -44,7 +44,7 @@ class Skin_Custom extends Skin_Base {
 		$this->add_control(
 			'skin_template',
 			[
-				'label' => __( 'Select a template', 'elecustomskin' ),
+				'label' => __( 'Select a template', 'ele-custom-skin' ),
 				'type' => Controls_Manager::SELECT2,
 				'label_block' => true,
 				'default' => [],
@@ -143,7 +143,7 @@ class Skin_Custom extends Skin_Base {
 		$this->render_post_header();
 		if ($this->get_instance_value( 'skin_template' )) 	echo $this->get_template();
 
-			else echo "Select a Loop template! If you don't have one go to Elementor &gt; My Templates.";
+			else _e( "Select a Loop template! If you don't have one go to Elementor &gt; My Templates.", 'ele-custom-skin');
 
 
 		$this->render_post_footer();
