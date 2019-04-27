@@ -6,8 +6,7 @@
  * Plugin URI: https://www.eletemplator.com
  * Author: Liviu Duda
  * Author URI: https://www.leadpro.ro
- * Text Domain: elecustomskin
- * Domain Path: /languages
+ * Text Domain: ele-custom-skin
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl-3.0
 */
