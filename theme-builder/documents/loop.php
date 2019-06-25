@@ -21,7 +21,7 @@ class Loop extends Theme_Document {
 	}
 
 	public static function get_title() {
-		return __( 'Loop', 'elementor-pro' );
+		return __( 'Loop', 'ele-custom-skin' );
 	}
 
 	public static function get_preview_as_default() {
