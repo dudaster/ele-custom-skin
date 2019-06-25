@@ -15,7 +15,7 @@ class Post_Summary extends Tag {
 	}
 
 	public function get_title() {
-		return __( 'Post Summary', 'elementor-pro' );
+		return __( 'Post Summary', 'ele-custom-skin' );
 	}
 
 	public function get_group() {
@@ -30,7 +30,7 @@ class Post_Summary extends Tag {
     $this->add_control(
       'length',
       [
-         'label'   => __( 'Length', 'elementor-pro' ),
+         'label'   => __( 'Length', 'ele-custom-skin' ),
          'type'    => Controls_Manager::NUMBER,
          'default' => 25,
          'min'     => 0,
