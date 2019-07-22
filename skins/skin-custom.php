@@ -119,13 +119,21 @@ class Skin_Posts_ECS extends Skin_Base {
 
 	protected function get_template(){
     global $ecs_render_loop;
-    $ecs_render_loop=true;
+    
+    global $wp_query;
+    $old_query=$wp_query;
+    $new_query=new \WP_Query( array( 'p' => get_the_ID() ) );
+    $wp_query = $new_query;
+
+    $ecs_render_loop=get_the_ID().",".$this->get_instance_value( 'skin_template' );
 		$settings = $this->parent->get_settings();
 		$this->pid=get_the_ID();//set the current id in private var usefull to passid 
 		if (!$this->get_instance_value( 'skin_template' )) return;
 		$return = \Elementor\Plugin::instance()->frontend->get_builder_content_for_display( $this->get_instance_value( 'skin_template' ) );
+    
     $ecs_render_loop=false;
-		return $return;
+    $wp_query = $old_query;
+    return $return;
 	}
 
 	protected function render_post_header() {
